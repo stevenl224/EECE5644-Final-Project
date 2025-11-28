@@ -1,4 +1,6 @@
 import pandas as pd
+from pathlib import Path
+
 def clean_flight_data(df):
     # Remove rows where departure is not Boston
     df = df[df['ORIGIN'] == 'BOS']
@@ -21,8 +23,15 @@ def clean_flight_data(df):
 
     return df
 
-filepath = "C:/Users/zacha/EECE5644-Final-Project/filtered_bos_flights.csv"
-df = pd.read_csv(filepath)
-cleaned_df = clean_flight_data(df)
+ROOT = Path(__file__).resolve().parent
+CLEAN_DIR = ROOT / "data" / "cleaned"
+CLEAN_DIR.mkdir(parents=True, exist_ok=True)
 
-cleaned_df.to_csv("C:/Users/zacha/EECE5644-Final-Project/cleaned_bos_flights_1.csv", index=False)
+input_file = CLEAN_DIR / "filtered_bos_flights.csv"
+output_file = CLEAN_DIR / "cleaned_bos_flights_1.csv"
+
+df = pd.read_csv(input_file)
+cleaned_df = clean_flight_data(df)
+cleaned_df.to_csv(output_file, index=False)
+
+print("Saved:", output_file)
