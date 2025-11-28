@@ -1,5 +1,6 @@
 import json
 import pandas as pd
+from pathlib import Path
 
 # Read the list of JSON files based on dates.txt
 file_paths = []
@@ -135,7 +136,13 @@ df = pd.DataFrame({
     "gust_kph": gust_kph,
     "uv": uv
 })
-df.to_excel("weather_data.xlsx", index=False)
+
+ROOT = Path(__file__).resolve().parent
+CLEAN_DIR = ROOT / "data" / "cleaned"
+CLEAN_DIR.mkdir(parents=True, exist_ok=True)
+
+df.to_excel(CLEAN_DIR / "weather_data.xlsx", index=False)
+
 """"
 "hour": [
                     {
