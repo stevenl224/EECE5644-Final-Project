@@ -39,7 +39,7 @@ conditions = data['condition_text'].dropna().unique()
 import os
 if not os.path.exists('stdDelayPlots'):
     os.makedirs('stdDelayPlots')
-    
+
 # Loop through each weather condition
 for cond in conditions:
     subset = data[data['condition_text'] == cond]
@@ -161,8 +161,7 @@ for cond in conditions:
     plt.grid(True, alpha=0.3)
     plt.legend(fontsize=11)
     plt.tight_layout()
-    plt.show()
 
     # Save plot in stdDelayPlots folder
     plt.savefig(f'stdDelayPlots/{cond}_std_delay.png')
-    plt.close()
+    

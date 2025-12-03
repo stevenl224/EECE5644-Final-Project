@@ -160,9 +160,7 @@ for cond in conditions:
     plt.grid(True, alpha=0.3)
     plt.legend(fontsize=11)
     plt.tight_layout()
-    plt.show()
 
     # Save plot in meanDelayPlots folder
     plt.savefig(f'meanDelayPlots/{cond}_mean_delay.png')
-    plt.close()
     
