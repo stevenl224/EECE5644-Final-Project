@@ -35,6 +35,10 @@ def minutes_to_hhmm(minutes):
 
 conditions = data['condition_text'].dropna().unique()
 
+# Create directory for plots if it doesn't exist
+import os
+if not os.path.exists('meanDelayPlots'):
+    os.makedirs('meanDelayPlots')
 # Loop through each weather condition
 for cond in conditions:
     subset = data[data['condition_text'] == cond]
@@ -157,3 +161,8 @@ for cond in conditions:
     plt.legend(fontsize=11)
     plt.tight_layout()
     plt.show()
+
+    # Save plot in meanDelayPlots folder
+    plt.savefig(f'meanDelayPlots/{cond}_mean_delay.png')
+    plt.close()
+    
