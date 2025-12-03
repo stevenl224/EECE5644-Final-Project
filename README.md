@@ -264,10 +264,10 @@ The project generates comprehensive visualizations:
 
 ## Contributors
 
-- **Steven Lam** - Data acquisition, research, documentation
-- **Zachary Diringer** - Cancellation prediction, linear regression models, air-time prediction
-- **Kyle Murrah** - Data acquisition, research, documentation
-- **Pramukh Koushik** - Classification models (Logistic, SVM, KNN), ROC/confusion matrix analysis
+- **Steven Lam**
+- **Zachary Diringer**
+- **Kyle Murrah**
+- **Pramukh Koushik**
 
 ## License
 
@@ -277,7 +277,6 @@ This project is for educational purposes as part of a machine learning course at
 
 1. Kaggle Airline Delay Dataset: https://www.kaggle.com/datasets/sriharshaeedala/airline-delay
 2. WeatherAPI.com: https://www.weatherapi.com/
-3. Related academic papers cited in final report
 
 ## Acknowledgments
 
