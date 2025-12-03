@@ -9,7 +9,7 @@ from sklearn.metrics import r2_score
 # -----------------------------
 # Load data
 # -----------------------------
-data = pd.read_csv('merged_flight_weather_data.csv')
+data = pd.read_csv('data/cleaned/merged_flight_weather_data.csv')
 
 # Remove extreme outliers in DEP_DELAY
 delay_threshold = data['DEP_DELAY'].quantile(0.95)

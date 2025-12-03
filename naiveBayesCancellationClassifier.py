@@ -10,7 +10,7 @@ from imblearn.over_sampling import SMOTE
 # -----------------------------
 # 1. Load and filter data
 # -----------------------------
-data = pd.read_csv('merged_flight_weather_data.csv')
+data = pd.read_csv('data/cleaned/merged_flight_weather_data.csv')
 conditions = ["Moderate snow", "Moderate or heavy snow showers", "Light freezing rain"]
 df = data[data["condition_text"].isin(conditions)].copy()
 
